@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PeerSync | Campus Peer Study Groups &amp; Exam Prep Circles</title>
+  <!-- One shared stylesheet for all pages -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ NAVIGATION (same on every page) ============ -->
+  <!-- class="active" highlights the page you are currently on -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">⚡</span><span class="logo-text">PeerSync</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="find-groups.html">Find Groups</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO SECTION ============ -->
+    <!-- Animated gradient background + floating blobs + floating flashcards -->
+    <section class="hero">
+      <!-- Decorative blurred circles (they float using @keyframes) -->
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+
+      <div class="container hero-grid">
+
+        <!-- Left side: headline text -->
+        <div class="hero-text">
+          <span class="eyebrow"><span class="dot"></span> Now open for End-Semester Exam prep</span>
+          <h1>Study smarter,<br><span class="gradient-text">together.</span></h1>
+          <p class="lead">
+            PeerSync connects you with classmates who are preparing for the same exams.
+            Create or join a study circle in seconds, and never revise alone again.
+          </p>
+          <div class="hero-actions">
+            <a href="find-groups.html" class="btn btn-primary">Find a Study Circle →</a>
+            <a href="dashboard.html" class="btn btn-ghost">Create a Group</a>
+          </div>
+          <div class="hero-trust">
+            <div class="avatars">
+              <span class="avatar a1">AK</span><span class="avatar a2">RS</span>
+              <span class="avatar a3">MP</span><span class="avatar a4">+</span>
+            </div>
+            <span>Join 2,400+ students already studying together</span>
+          </div>
+        </div>
+
+        <!-- Right side: floating example flashcards -->
+        <div class="hero-visual">
+          <div class="float-card fc-1">
+            <span class="tag green">CSE201</span>
+            <h4>Data Structures Sprint</h4>
+            <small>Mon &amp; Wed · 6:00 PM · Library Hall</small>
+          </div>
+          <div class="float-card fc-2">
+            <span class="tag indigo">MAT102</span>
+            <h4>Calculus Crash Circle</h4>
+            <small>Tue &amp; Thu · 5:30 PM · Block C</small>
+          </div>
+          <div class="float-card fc-3">
+            <span class="tag">PHY110</span>
+            <h4>Physics Problem Solvers</h4>
+            <small>Sat · 10:00 AM · Online</small>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ STATS STRIP ============ -->
+    <div class="container">
+      <div class="stats">
+        <div class="stat"><strong class="gradient-text">2,400+</strong><span>Active students</span></div>
+        <div class="stat"><strong class="gradient-text">180+</strong><span>Study circles</span></div>
+        <div class="stat"><strong class="gradient-text">45</strong><span>Subjects covered</span></div>
+        <div class="stat"><strong class="gradient-text">4.9★</strong><span>Average rating</span></div>
+      </div>
+    </div>
+
+    <!-- ============ FEATURES: BENTO GRID ============ -->
+    <!-- .span-2 = tile is 2 columns wide, .row-2 = tile is 2 rows tall -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Everything you need to <span class="gradient-text">ace your exams</span></h2>
+          <p>Simple tools designed around how students actually study.</p>
+        </div>
+
+        <div class="bento">
+
+          <article class="tile tile-dark span-2 row-2">
+            <div class="tile-icon">🎯</div>
+            <h3>Smart Group Discovery</h3>
+            <p>Filter circles by subject code, target exam and study pace. Find the exact group that matches your syllabus and your schedule.</p>
+            <div class="pill-row">
+              <span class="pill">Subject Code</span>
+              <span class="pill">Target Exam</span>
+              <span class="pill">Study Pace</span>
+              <span class="pill">Meeting Time</span>
+            </div>
+          </article>
+
+          <article class="tile">
+            <div class="tile-icon">✍️</div>
+            <h3>Create in Seconds</h3>
+            <p>Start your own circle with one simple form.</p>
+          </article>
+
+          <article class="tile">
+            <div class="tile-icon">📅</div>
+            <h3>Flexible Timings</h3>
+            <p>Morning, evening or weekend sessions.</p>
+          </article>
+
+          <article class="tile span-2">
+            <div class="tile-icon">🃏</div>
+            <h3>Flashcard-Style Groups</h3>
+            <p>Every study circle appears as a clean card showing its subject, schedule, members and open seats at a glance.</p>
+          </article>
+
+          <article class="tile tile-gradient span-2">
+            <div class="tile-icon">🚀</div>
+            <h3>Exam-Focused Sprints</h3>
+            <p>Join short, intense revision circles built for mid-terms, finals and viva preparation.</p>
+          </article>
+
+          <article class="tile">
+            <div class="tile-icon">👥</div>
+            <h3>Small Circles</h3>
+            <p>Groups of 3–8 keep everyone engaged.</p>
+          </article>
+
+          <article class="tile">
+            <div class="tile-icon">📊</div>
+            <h3>Track Progress</h3>
+            <p>See all your joined groups in one dashboard.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>How <span class="gradient-text">PeerSync</span> works</h2>
+          <p>Three steps from lonely revision to a productive circle.</p>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><h3>Search</h3><p>Browse the directory and filter by your subject code and exam.</p></div>
+          <div class="step"><div class="step-num">2</div><h3>Join</h3><p>Press "Join Circle" on the flashcard that fits your schedule.</p></div>
+          <div class="step"><div class="step-num">3</div><h3>Study</h3><p>Meet your circle, share notes and revise together.</p></div>
+        </div>
+
+        <!-- Call to action -->
+        <div class="cta">
+          <h2>Ready to find your <span class="gradient-text">study circle?</span></h2>
+          <p>Exams are closer than you think. Start now.</p>
+          <a href="find-groups.html" class="btn btn-primary">Browse Study Groups →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="page-end"></div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <a href="index.html" class="logo"><span class="logo-mark">⚡</span><span class="logo-text">PeerSync</span></a>
+      <p>© 2026 PeerSync · Campus Peer Study Group Finder · CA2 Project</p>
+    </div>
+  </footer>
+
+</body>
+</html>
