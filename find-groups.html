@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Groups | PeerSync</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo"><span class="logo-mark">⚡</span><span class="logo-text">PeerSync</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="find-groups.html" class="active">Find Groups</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <div class="page-header">
+      <h1>Find your <span class="gradient-text">study circle</span></h1>
+      <p>Filter by subject, exam and pace, then join with one click.</p>
+    </div>
+
+    <!-- ============ 2-COLUMN LAYOUT ============ -->
+    <div class="layout">
+
+      <!-- ---------- LEFT: sticky filter sidebar ---------- -->
+      <aside class="sidebar">
+        <h2>Filters</h2>
+        <p class="sub">Narrow down the directory.</p>
+
+        <form action="#" method="get">
+
+          <!-- Filter 1: Subject Code (dropdown) -->
+          <div class="filter-block">
+            <label class="filter-title" for="f-subject">Subject Code</label>
+            <select id="f-subject">
+              <option>All subjects</option>
+              <option>CSE201 – Data Structures</option>
+              <option>CSE305 – Operating Systems</option>
+              <option>MAT102 – Calculus</option>
+              <option>PHY110 – Physics</option>
+              <option>ENG101 – Technical Writing</option>
+              <option>ECE210 – Digital Electronics</option>
+            </select>
+          </div>
+
+          <!-- Filter 2: Target Exam (CSS-only chips using radio buttons) -->
+          <div class="filter-block">
+            <span class="filter-title">Target Exam</span>
+            <div class="chips">
+              <input type="radio" name="exam" id="e-all" checked><label for="e-all">All</label>
+              <input type="radio" name="exam" id="e-ca1"><label for="e-ca1">CA1</label>
+              <input type="radio" name="exam" id="e-ca2"><label for="e-ca2">CA2</label>
+              <input type="radio" name="exam" id="e-mid"><label for="e-mid">Mid-Term</label>
+              <input type="radio" name="exam" id="e-end"><label for="e-end">End-Term</label>
+            </div>
+          </div>
+
+          <!-- Filter 3: Study Pace -->
+          <div class="filter-block">
+            <span class="filter-title">Study Pace</span>
+            <div class="chips">
+              <input type="radio" name="pace" id="s-any" checked><label for="s-any">Any</label>
+              <input type="radio" name="pace" id="s-relaxed"><label for="s-relaxed">Relaxed</label>
+              <input type="radio" name="pace" id="s-steady"><label for="s-steady">Steady</label>
+              <input type="radio" name="pace" id="s-intense"><label for="s-intense">Intense</label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Apply Filters</button>
+        </form>
+      </aside>
+
+      <!-- ---------- RIGHT: search + flashcard grid ---------- -->
+      <section>
+
+        <!-- Search bar (icon is added with CSS ::before) -->
+        <div class="search-bar">
+          <input type="search" placeholder="Search by group name, subject or keyword..." aria-label="Search study groups">
+        </div>
+
+        <div class="content-head">
+          <h2>Available Study Circles</h2>
+          <span class="count-badge">8 groups</span>
+        </div>
+
+        <div class="card-grid">
+
+          <article class="card">
+            <div class="card-top"><span class="tag green">CSE201</span><span class="status">Open</span></div>
+            <h3>Data Structures Sprint</h3>
+            <p class="desc">Trees, graphs and sorting with past paper practice.</p>
+            <ul class="meta"><li>📅 Mon &amp; Wed · 6:00 PM</li><li>🎯 End-Term · Intense</li></ul>
+            <div class="progress"><span style="width: 66%"></span></div>
+            <p class="seats">2 seats left</p>
+            <div class="avatars"><span class="avatar a1">AK</span><span class="avatar a2">RS</span><span class="avatar a3">MP</span></div>
+            <div class="card-actions"><a href="#" class="btn btn-join">Join Circle</a></div>
+          </article>
+
+          <article class="card">
+            <div class="card-top"><span class="tag indigo">CSE305</span><span class="status">Open</span></div>
+            <h3>OS Concepts Circle</h3>
+            <p class="desc">Scheduling, deadlocks and memory management.</p>
+            <ul class="meta"><li>📅 Tue &amp; Fri · 7:00 PM</li><li>🎯 CA2 · Steady</li></ul>
+            <div class="progress"><span style="width: 37%"></span></div>
+            <p class="seats">5 seats left</p>
+            <div class="avatars"><span class="avatar a4">JD</span><span class="avatar a1">VK</span></div>
+            <div class="card-actions"><a href="#" class="btn btn-join">Join Circle</a></div>
+          </article>
+
+          <article class="card">
+            <div class="card-top"><span class="tag">MAT102</span><span class="status">Open</span></div>
+            <h3>Calculus Crash Circle</h3>
+            <p class="desc">Integration techniques and differential equations.</p>
+            <ul class="meta"><li>📅 Tue &amp; Thu · 5:30 PM</li><li>🎯 Mid-Term · Steady</li></ul>
+            <div class="progress"><span style="width: 50%"></span></div>
+            <p class="seats">4 seats left</p>
+            <div class="avatars"><span class="avatar a2">NV</span><span class="avatar a3">TS</span><span class="avatar a1">LM</span><span class="avatar a4">+1</span></div>
+            <div class="card-actions"><a href="#" class="btn btn-join">Join Circle</a></div>
+          </article>
+
+          <article class="card">
+            <div class="card-top"><span class="tag amber">PHY110</span><span class="status">Open</span></div>
+            <h3>Physics Problem Solvers</h3>
+            <p class="desc">Weekend numericals and concept discussion.</p>
+            <ul class="meta"><li>📅 Saturday · 10:00 AM</li><li>🎯 CA1 · Relaxed</li></ul>
+            <div class="progress"><span style="width: 83%"></span></div>
+            <p class="seats">1 seat left</p>
+            <div class="avatars"><span class="avatar a3">SK</span><span class="avatar a1">PR</span><span class="avatar a2">DA</span></div>
+            <div class="card-actions"><a href="#" class="btn btn-join">Join Circle</a></div>
+          </article>
+
+          <article class="card">
+            <div class="card-top"><span class="tag green">ECE210</span><span class="status">Open</span></div>
+            <h3>Digital Logic Lab Prep</h3>
+            <p class="desc">K-maps, flip-flops and viva question practice.</p>
+            <ul class="meta"><li>📅 Wed · 4:30 PM</li><li>🎯 Viva · Steady</li></ul>
+            <div class="progress"><span style="width: 25%"></span></div>
+            <p class="seats">6 seats left</p>
+            <div class="avatars"><span class="avatar a4">HB</span><span class="avatar a2">GT</span></div>
+            <div class="card-actions"><a href="#" class="btn btn-join">Join Circle</a></div>
+          </article>
+
+          <article class="card">
+            <div class="card-top"><span class="tag indigo">ENG101</span><span class="status">Open</span></div>
+            <h3>Technical Writing Lab</h3>
+            <p class="desc">Report structure, grammar and presentation practice.</p>
+            <ul class="meta"><li>📅 Friday · 4:00 PM</li><li>🎯 CA2 · Relaxed</li></ul>
+            <div class="progress"><span style="width: 40%"></span></div>
+            <p class="seats">3 seats left</p>
+            <div class="avatars"><span class="avatar a1">CG</span><span class="avatar a3">FN</span></div>
+            <div class="card-actions"><a href="#" class="btn btn-join">Join Circle</a></div>
+          </article>
+
+          <article class="card">
+            <div class="card-top"><span class="tag">CSE201</span><span class="status">Open</span></div>
+            <h3>Algorithm Night Owls</h3>
+            <p class="desc">Late-night dynamic programming and recursion drills.</p>
+            <ul class="meta"><li>📅 Sun · 9:00 PM</li><li>🎯 End-Term · Intense</li></ul>
+            <div class="progress"><span style="width: 62%"></span></div>
+            <p class="seats">3 seats left</p>
+            <div class="avatars"><span class="avatar a2">OM</span><span class="avatar a4">BZ</span><span class="avatar a1">IQ</span></div>
+            <div class="card-actions"><a href="#" class="btn btn-join">Join Circle</a></div>
+          </article>
+
+          <!-- This card has class "is-full": greyed out, button disabled-looking -->
+          <article class="card is-full">
+            <div class="card-top"><span class="tag amber">MAT102</span><span class="status full">Full</span></div>
+            <h3>Linear Algebra Warriors</h3>
+            <p class="desc">Matrices, eigenvalues and vector spaces.</p>
+            <ul class="meta"><li>📅 Mon · 5:00 PM</li><li>🎯 Mid-Term · Intense</li></ul>
+            <div class="progress"><span style="width: 100%"></span></div>
+            <p class="seats">No seats left</p>
+            <div class="avatars"><span class="avatar a3">EY</span><span class="avatar a1">WU</span><span class="avatar a2">KL</span><span class="avatar a4">ZA</span></div>
+            <div class="card-actions"><a href="#" class="btn btn-join">Group Full</a></div>
+          </article>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <a href="index.html" class="logo"><span class="logo-mark">⚡</span><span class="logo-text">PeerSync</span></a>
+      <p>© 2026 PeerSync · Campus Peer Study Group Finder · CA2 Project</p>
+    </div>
+  </footer>
+
+</body>
+</html>
