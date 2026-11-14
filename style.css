@@ -1,33 +1,18 @@
-/* =====================================================================
-   PeerSync - style.css
-   Pure CSS (no JavaScript, no frameworks).
-   Reading order (easy to explain in a viva):
-     1. Variables      7. Dashboard / Directory layout
-     2. Reset          8. Forms, filters & chips
-     3. Navigation     9. Flashcards (study group cards)
-     4. Buttons       10. Footer
-     5. Hero          11. Animations
-     6. Bento grid    12. Responsive rules
-   ===================================================================== */
 
-
-/* Load the Inter font so lighter weights (300-500) actually render */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
-/* ---------------------------------------------------------------------
-   1. VARIABLES - one place to change the whole colour theme
-   --------------------------------------------------------------------- */
+
 :root {
-  --navy:        #0f172a;   /* Oxford Blue - main dark colour   */
-  --navy-soft:   #1e293b;   /* slightly lighter navy            */
+  --navy:        #0f172a;  
+  --navy-soft:   #1e293b;   
   --white:       #ffffff;
-  --bg:          #f1f5f9;   /* soft slate page background       */
+  --bg:          #f1f5f9;   
   --text:        #0f172a;
   --text-muted:  #64748b;
   --border:      #e2e8f0;
 
-  --accent-1:    #10b981;   /* emerald */
-  --accent-2:    #06b6d4;   /* cyan    */
+  --accent-1:    #10b981;   
+  --accent-2:    #06b6d4;  
   --gradient:    linear-gradient(135deg, var(--accent-1), var(--accent-2));
 
   --radius-sm:   10px;
@@ -43,9 +28,7 @@
 }
 
 
-/* ---------------------------------------------------------------------
-   2. RESET - removes browser default spacing so layouts are predictable
-   --------------------------------------------------------------------- */
+
 *,
 *::before,
 *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -64,10 +47,10 @@ a   { color: inherit; text-decoration: none; }
 ul  { list-style: none; }
 h1, h2, h3, h4 { line-height: 1.15; letter-spacing: -0.02em; }
 
-/* Reusable centred container */
+
 .container { width: min(100% - 40px, var(--max-width)); margin-inline: auto; }
 
-/* Reusable gradient text (uses background-clip: text) */
+
 .gradient-text {
   background: var(--gradient);
   -webkit-background-clip: text;
@@ -77,17 +60,15 @@ h1, h2, h3, h4 { line-height: 1.15; letter-spacing: -0.02em; }
 }
 
 
-/* ---------------------------------------------------------------------
-   3. NAVIGATION - sticky "frosted glass" bar
-   --------------------------------------------------------------------- */
+
 .navbar {
-  position: sticky;                       /* stays at the top while scrolling */
+  position: sticky;                   
   top: 0;
   z-index: 100;
   height: var(--nav-height);
-  background: rgba(255, 255, 255, 0.72);  /* semi-transparent white           */
+  background: rgba(255, 255, 255, 0.72);  
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-          backdrop-filter: blur(16px) saturate(180%);  /* the frosted glass effect */
+          backdrop-filter: blur(16px) saturate(180%);  
   border-bottom: 1px solid rgba(226, 232, 240, 0.8);
 }
 
@@ -129,9 +110,7 @@ h1, h2, h3, h4 { line-height: 1.15; letter-spacing: -0.02em; }
 .nav-links a.active { background: var(--navy); color: var(--white); }   /* current page */
 
 
-/* ---------------------------------------------------------------------
-   4. BUTTONS
-   --------------------------------------------------------------------- */
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -172,20 +151,18 @@ h1, h2, h3, h4 { line-height: 1.15; letter-spacing: -0.02em; }
 .btn:focus-visible { outline: 3px solid rgba(6, 182, 212, 0.45); outline-offset: 2px; }
 
 
-/* ---------------------------------------------------------------------
-   5. HERO (home page)
-   --------------------------------------------------------------------- */
+
 .hero {
   position: relative;
-  overflow: hidden;                      /* hides blobs that float outside */
+  overflow: hidden;                    
   padding: 110px 0 120px;
-  /* soft animated background gradient (moves via @keyframes below) */
+ 
   background: linear-gradient(120deg, #ecfdf5, #f0f9ff, #eef2ff, #ecfdf5);
   background-size: 300% 300%;
   animation: gradientShift 14s ease infinite;
 }
 
-/* Floating blurred circles - purely decorative */
+
 .blob {
   position: absolute;
   border-radius: 50%;
@@ -200,7 +177,7 @@ h1, h2, h3, h4 { line-height: 1.15; letter-spacing: -0.02em; }
 
 .hero-grid {
   position: relative;
-  z-index: 1;                            /* sits above the blobs */
+  z-index: 1;                           
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   align-items: center;
@@ -243,7 +220,7 @@ h1, h2, h3, h4 { line-height: 1.15; letter-spacing: -0.02em; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
 .hero-trust   { margin-top: 36px; font-size: 0.88rem; color: var(--text-muted); display: flex; align-items: center; gap: 12px; }
 
-/* Hero visual: stack of floating flashcards */
+
 .hero-visual { position: relative; height: 420px; }
 .float-card {
   position: absolute;
@@ -263,11 +240,11 @@ h1, h2, h3, h4 { line-height: 1.15; letter-spacing: -0.02em; }
 .float-card.fc-2 { top: 130px; right: 0;   transform: rotate(4deg);  animation-delay: -2s; }
 .float-card.fc-3 { bottom: 0;  left: 40px; transform: rotate(-2deg); animation-delay: -4s; }
 
-/* Stats strip under the hero */
+
 .stats {
   position: relative;
   z-index: 2;
-  margin-top: -50px;                     /* pulls the strip up over the hero */
+  margin-top: -50px;                     
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   background: var(--white);
@@ -280,17 +257,14 @@ h1, h2, h3, h4 { line-height: 1.15; letter-spacing: -0.02em; }
 .stat strong { display: block; font-size: 2rem; letter-spacing: -0.03em; }
 .stat span   { font-size: 0.85rem; color: var(--text-muted); }
 
-/* Generic section spacing & headings */
+
 .section { padding: 96px 0 0; }
 .section-head { text-align: center; max-width: 640px; margin: 0 auto 52px; }
 .section-head h2 { font-size: clamp(1.8rem, 3.6vw, 2.5rem); font-weight: 500; margin-bottom: 14px; }
 .section-head p  { color: var(--text-muted); font-size: 1.05rem; }
 
 
-/* ---------------------------------------------------------------------
-   6. BENTO GRID (feature section)
-   4 equal columns; some tiles "span" 2 columns or 2 rows.
-   --------------------------------------------------------------------- */
+
 .bento {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -317,8 +291,8 @@ h1, h2, h3, h4 { line-height: 1.15; letter-spacing: -0.02em; }
   font-size: 1.4rem;
 }
 
-.span-2 { grid-column: span 2; }       /* tile is 2 columns wide */
-.row-2  { grid-row: span 2; }          /* tile is 2 rows tall    */
+.span-2 { grid-column: span 2; }       
+.row-2  { grid-row: span 2; }          
 
 .tile-dark  { background: var(--navy); color: var(--white); border-color: var(--navy); }
 .tile-dark p { color: #94a3b8; }
@@ -327,7 +301,7 @@ h1, h2, h3, h4 { line-height: 1.15; letter-spacing: -0.02em; }
 .tile-gradient p { color: rgba(255, 255, 255, 0.88); }
 .tile-gradient .tile-icon { background: rgba(255, 255, 255, 0.22); }
 
-/* Little decorative pills inside tiles */
+
 .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
 .pill {
   padding: 6px 12px;
@@ -339,7 +313,7 @@ h1, h2, h3, h4 { line-height: 1.15; letter-spacing: -0.02em; }
 }
 .tile:not(.tile-dark):not(.tile-gradient) .pill { background: var(--bg); border-color: var(--border); color: var(--navy); }
 
-/* "How it works" steps */
+
 .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .step  { padding: 30px; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); }
 .step-num {
@@ -354,7 +328,7 @@ h1, h2, h3, h4 { line-height: 1.15; letter-spacing: -0.02em; }
 .step h3 { margin-bottom: 8px; }
 .step p  { color: var(--text-muted); font-size: 0.95rem; }
 
-/* Call-to-action band */
+
 .cta {
   margin-top: 96px;
   padding: 72px 30px;
@@ -365,7 +339,7 @@ h1, h2, h3, h4 { line-height: 1.15; letter-spacing: -0.02em; }
   position: relative;
   overflow: hidden;
 }
-.cta::before {                         /* glowing circle behind the text */
+.cta::before {                        
   content: "";
   position: absolute;
   width: 420px; height: 420px;
@@ -379,22 +353,20 @@ h1, h2, h3, h4 { line-height: 1.15; letter-spacing: -0.02em; }
 .cta p  { color: #94a3b8; margin-bottom: 30px; }
 
 
-/* ---------------------------------------------------------------------
-   7. DASHBOARD / DIRECTORY LAYOUT (2 columns: sidebar + content)
-   --------------------------------------------------------------------- */
+
 .page-header { padding: 56px 0 32px; }
 .page-header h1 { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; margin-bottom: 8px; }
 .page-header p  { color: var(--text-muted); }
 
 .layout {
   display: grid;
-  grid-template-columns: 340px 1fr;     /* fixed sidebar + flexible content */
+  grid-template-columns: 340px 1fr;    
   gap: 28px;
   align-items: start;
   padding-bottom: 80px;
 }
 .sidebar {
-  position: sticky;                     /* sidebar follows you while scrolling */
+  position: sticky;                    
   top: calc(var(--nav-height) + 24px);
   padding: 26px;
   background: var(--white);
@@ -417,19 +389,17 @@ h1, h2, h3, h4 { line-height: 1.15; letter-spacing: -0.02em; }
   color: var(--text-muted);
 }
 
-/* Mini stat row on dashboard */
+
 .mini-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 28px; }
 .mini-stat  { padding: 18px 20px; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); }
 .mini-stat strong { display: block; font-size: 1.7rem; letter-spacing: -0.03em; }
 .mini-stat span   { font-size: 0.82rem; color: var(--text-muted); }
 
-/* Grid that holds the flashcards */
+
 .card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
 
 
-/* ---------------------------------------------------------------------
-   8. FORMS, FILTERS & CHIPS
-   --------------------------------------------------------------------- */
+
 .field { margin-bottom: 18px; }
 .field label.label,
 .filter-title {
@@ -462,7 +432,7 @@ textarea { resize: vertical; min-height: 84px; }
 
 input:hover, select:hover, textarea:hover { border-color: var(--border); }
 
-/* Focus state: white background + glowing accent ring */
+
 input:focus, select:focus, textarea:focus {
   outline: none;
   background: var(--white);
@@ -472,8 +442,7 @@ input:focus, select:focus, textarea:focus {
 
 .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 
-/* CSS-only "chips": a hidden radio button + a styled label.
-   When the radio is :checked, the label next to it (+) changes style. */
+
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .chips input { position: absolute; opacity: 0; pointer-events: none; }
 .chips label {
@@ -498,7 +467,7 @@ input:focus, select:focus, textarea:focus {
 .filter-block { padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px solid var(--border); }
 .filter-block:last-of-type { border-bottom: none; }
 
-/* Search bar */
+
 .search-bar { position: relative; margin-bottom: 24px; }
 .search-bar input {
   padding: 15px 18px 15px 48px;
@@ -516,20 +485,18 @@ input:focus, select:focus, textarea:focus {
 }
 
 
-/* ---------------------------------------------------------------------
-   9. FLASHCARDS (study group cards)
-   --------------------------------------------------------------------- */
+
 .card {
   display: flex;
   flex-direction: column;
   padding: 24px;
   background: var(--white);
-  border: 1px solid var(--border);           /* subtle border */
+  border: 1px solid var(--border);           
   border-radius: var(--radius);
   box-shadow: var(--shadow-sm);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
-/* Hover: lift the card up and deepen the shadow */
+
 .card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-md);
@@ -560,12 +527,12 @@ input:focus, select:focus, textarea:focus {
 .meta { display: grid; gap: 7px; margin-bottom: 18px; font-size: 0.85rem; color: var(--text-muted); }
 .meta li { display: flex; align-items: center; gap: 8px; }
 
-/* Seats progress bar: the inner bar's width is set inline per card */
+
 .progress { height: 6px; margin-bottom: 8px; background: var(--bg); border-radius: 999px; overflow: hidden; }
 .progress span { display: block; height: 100%; background: var(--gradient); border-radius: 999px; }
 .seats { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 18px; }
 
-/* Overlapping member avatars */
+
 .avatars { display: flex; margin-bottom: 18px; }
 .avatar {
   width: 30px; height: 30px;
@@ -596,38 +563,31 @@ input:focus, select:focus, textarea:focus {
 .card.is-full .btn-join { background: var(--border); color: var(--text-muted); cursor: not-allowed; box-shadow: none; transform: none; }
 
 
-/* ---------------------------------------------------------------------
-   10. FOOTER
-   --------------------------------------------------------------------- */
+
 .footer { padding: 36px 0; border-top: 1px solid var(--border); background: var(--white); }
 .footer .container { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
 .footer p { color: var(--text-muted); font-size: 0.88rem; }
 .page-end { padding-bottom: 96px; }
 
 
-/* ---------------------------------------------------------------------
-   11. ANIMATIONS (@keyframes) - used by the hero
-   --------------------------------------------------------------------- */
-/* Slowly slides the oversized background gradient left/right */
+
 @keyframes gradientShift {
   0%   { background-position: 0% 50%; }
   50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
-/* Gentle up-and-down bobbing motion */
+
 @keyframes float {
   0%, 100% { translate: 0 0; }
   50%      { translate: 0 -18px; }
 }
-/* Respect users who prefer no motion (accessibility) */
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 
 
-/* ---------------------------------------------------------------------
-   12. RESPONSIVE RULES - stack columns on tablets and phones
-   --------------------------------------------------------------------- */
+
 @media (max-width: 960px) {
   .hero-grid        { grid-template-columns: 1fr; }
   .hero-visual      { display: none; }
